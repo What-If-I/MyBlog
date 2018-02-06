@@ -1,0 +1,33 @@
+{% extends "blog/_base.html" %}
+
+{% block content %}
+
+    <div class="single-post">
+
+        <!-- Single Content -->
+        <div id="content" class="site-content center-relative">
+            <div class="single-post-wrapper content-1070 center-relative">
+
+                <article class="center-relative">
+                    <h1 class="entry-title">
+                        {{ article.title }}
+                    </h1>
+                    <div class="post-info content-660 center-relative">
+                        <div class="cat-links">
+                            <ul>
+                                <li><a href="/users/{{ article.author.id }}">{{ article.author }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="entry-date published">{{ article.created_at }}</div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="entry-content">
+                        {{ article.content|safe }}
+                    </div>
+                    <div class="clear"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

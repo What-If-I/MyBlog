@@ -1,0 +1,46 @@
+{% extends "blog/_base.html" %}
+{% load static %}
+
+{% block title %}Coolest blog ever.{% endblock %}
+
+{% block content %}
+
+    <div id="content" class="site-content">
+        <div id="blog-wrapper">
+            <div class="blog-holder center-relative">
+
+                {% for article in articles %}
+
+                    <article class="blog-item-holder featured-post">
+                        <div class="entry-content relative">
+                            <div class="content-1170 center-relative">
+                                <div class="cat-links">
+                                    <ul>
+                                        <li><a href="/users/{{ article.author.id }}">{{ article.author }}</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="entry-date published">{{ article.created_at }}</div>
+                                <h2 class="entry-title">
+                                    <a href="articles/{{ article.id }}">{{ article.title }}</a>
+                                </h2>
+                                <div class="excerpt">{{ article.content|safe|truncatechars_html:250 }}</div>
+                            </div>
+                        </div>
+                    </article>
+
+                {% endfor %}
+
+            </div>
+            <div class="clear"></div>
+            <div class="block load-more-holder">LOAD MORE ENTRIES</div>
+        </div>
+
+        <div class="featured-image-holder">
+            <div class="featured-post-image" style="background-image: url({% static "demo-images/Blog-intro.jpg" %})"></div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+{% endblock content %}
