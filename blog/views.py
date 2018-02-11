@@ -1,7 +1,10 @@
-from django.shortcuts import render
-from .models import Article
 import bleach
 import markdown
+
+from django.core.handlers.wsgi import WSGIRequest
+from django.shortcuts import render
+
+from .models import Article
 
 
 # todo: move it away. make it tag?
@@ -11,7 +14,7 @@ def make_it_pretty(article: Article) -> Article:
     return article
 
 
-def index(request):
+def index(request: WSGIRequest):
     articles = Article.objects.all()[:4]
     context = {
         'articles': articles,
@@ -21,7 +24,7 @@ def index(request):
     return render(request, 'blog/index.html', context)
 
 
-def article(request, article_id):
+def article(request: WSGIRequest, article_id: int):
     article = Article.objects.get(id=article_id)
     make_it_pretty(article)
     return render(request, 'blog/single.html', context={'article': article})

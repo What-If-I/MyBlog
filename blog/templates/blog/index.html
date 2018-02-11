@@ -1,12 +1,14 @@
 {% extends "blog/_base.html" %}
 {% load static %}
 
-{% block title %}Coolest blog ever.{% endblock %}
+{% block title %}Coolest blog. Ever.{% endblock %}
 
 {% block content %}
 
     <div id="content" class="site-content">
         <div id="blog-wrapper">
+        {% include "blog/_header.html" %}
+
             <div class="blog-holder center-relative">
 
                 {% for article in articles %}

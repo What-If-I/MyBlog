@@ -1402,3 +1402,29 @@ body.open .site-content
     }
 
 }
+
+
+#header {
+    top: 0;
+    left: 420px;
+}
+
+#header > div.admin-menu {
+    float: right;
+    padding-right: 4rem;
+    padding-top: 20px;
+}
+
+button#create-post {
+    font-size: 2em;
+    background: Transparent no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    transition: color 0.5s ease;
+}
+
+button#create-post:hover {
+    color: #0697ae;
+}
