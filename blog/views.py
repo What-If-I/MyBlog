@@ -28,3 +28,7 @@ def article(request: WSGIRequest, article_id: int):
     article = Article.objects.get(id=article_id)
     make_it_pretty(article)
     return render(request, 'blog/single.html', context={'article': article})
+
+
+def edit_test(request: WSGIRequest):
+    return render(request, 'blog/post_editor.html')
