@@ -146,11 +146,6 @@ jQuery(window).load(function () {
 
 jQuery(window).resize(function () {
 
-//Fix for sidebar height
-    jQuery("#sidebar").css('minHeight', jQuery("#content").outerHeight());
-
-    jQuery('.menu-left-part.open').width(jQuery('.sidebar.open').width() - jQuery('.menu-right-part.open').width());
-
     var count = 0;
     var scrollItemWidth = jQuery('.cbp-bislideshow.scroll li').outerWidth();
     jQuery('#cbp-bislideshow.scroll').children('li').each(function () {
@@ -177,9 +172,7 @@ var multiClickFunctionStop = function (e) {
     e.preventDefault();
     toggle.off("click");
     toggle.toggleClass("on");
-    jQuery('html, body, .sidebar, .menu-left-part, .menu-right-part').toggleClass("open");
-    jQuery('.menu-left-part').width('320px');
-    jQuery('.menu-left-part.open').width(jQuery('.sidebar.open').width() - jQuery('.menu-right-part.open').width());
+    jQuery('#sidebar, .menu-left-part, .menu-right-part').toggleClass("open");
     toggle.on("click", multiClickFunctionStop);
 };
 
