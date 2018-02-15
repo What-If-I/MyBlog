@@ -4,8 +4,11 @@ import markdown
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic import CreateView
 
-from .models import Article
+
+from . import models, forms
 
 
 # todo: move it away. make it tag?
@@ -19,7 +22,7 @@ class Articles(ListView):
 
     http_method_names = ['get']
     template_name = 'blog/index.html'
-    model = Article
+    model = models.Article
     queryset = model.objects.all()[:4]
     context_object_name = 'articles'
 
@@ -29,13 +32,21 @@ class Articles(ListView):
             article.content = make_it_pretty(article.content)
         return context
 
-# class Article()
 
-def article(request: WSGIRequest, article_id: int):
-    article = Article.objects.get(id=article_id)
-    make_it_pretty(article)
-    return render(request, 'blog/single.html', context={'article': article})
+class Article(DetailView):
+
+    http_method_names = ['get']
+    template_name = 'blog/single.html'
+    model = models.Article
+    pk_url_kwarg = 'article_id'
+    context_object_name = 'article'
+
+    def get_context_data(self, **kwargs):
+        context = super(Article, self).get_context_data(**kwargs)
+        context['article'].content = make_it_pretty(context['article'].content)
+        return context
 
 
-def edit_test(request: WSGIRequest):
-    return render(request, 'blog/post_editor.html')
+class ArticleEdit(CreateView):
+    form_class = forms.Article
+    template_name = 'blog/post_editor.html'
