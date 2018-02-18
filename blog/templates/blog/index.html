@@ -1,4 +1,5 @@
 {% extends "blog/_base.html" %}
+{% load templatefilters %}
 {% load static %}
 
 {% block title %}Coolest blog. Ever.{% endblock %}
@@ -23,9 +24,9 @@
 
                                 <div class="entry-date published">{{ article.created_at }}</div>
                                 <h2 class="entry-title">
-                                    <a href="articles/{{ article.id }}">{{ article.title }}</a>
+                                    <a href="{% url "article" article.id%}">{{ article.title }}</a>
                                 </h2>
-                                <div class="excerpt">{{ article.content|safe|truncatechars_html:250 }}</div>
+                                <div class="excerpt">{{ article.content|markdown2html|safe|truncatechars_html:250 }}</div>
                             </div>
                         </div>
                     </article>

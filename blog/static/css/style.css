@@ -943,7 +943,7 @@ button#create-post:hover {
 }
 
 
-#main-grid {
+#main-wrapper {
     display: flex;
     flex-flow: row nowrap;
 }
@@ -954,13 +954,13 @@ button#create-post:hover {
     flex-direction: row;
     background-color: #2D2D2D;
     width: 100px;
-    transition: width 0.1s ease;
+    transition: width .1s ease;
     z-index: 3;
 }
 
 #sidebar.open {
     width: 430px;
-    transition: width 0.3s ease;
+    transition: width .3s ease;
 }
 
 
@@ -972,7 +972,7 @@ button#create-post:hover {
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 3;
-    transition: width 0.1s ease;
+    transition: width .1s ease;
 }
 
 .menu-left-part.open {
@@ -1429,4 +1429,8 @@ div.featured-image-holder {
         margin-left: 4px;
     }
 
+}
+
+ol, ul {
+    padding-left: 30px;
 }

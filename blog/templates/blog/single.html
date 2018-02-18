@@ -1,4 +1,5 @@
 {% extends "blog/_base.html" %}
+{% load templatefilters %}
 
 {% block content %}
 
@@ -23,7 +24,7 @@
                     </div>
 
                     <div class="entry-content">
-                        {{ article.content|safe }}
+                        {{ article.content|markdown2html|safe }}
                     </div>
                     <div class="clear"></div>
                 </article>

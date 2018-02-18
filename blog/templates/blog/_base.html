@@ -32,14 +32,15 @@
 
 <body>
 
-    <div id="main-grid">
+    <div id="main-wrapper">
 
         <div id="sidebar">
             {% include "blog/_sidebar.html" %}
         </div>
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
 
     </div>
 

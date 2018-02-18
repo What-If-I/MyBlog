@@ -1,7 +1,20 @@
 {% extends "blog/_base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="{% static "css/edit-post.css" %}">
+{% endblock extra_css %}
 
 {% block content %}
 
-    {% include "blog/_edit_post_form.html" %}
+    <div id="submit-form-wrap">
+        {% include "blog/_edit_post_form.html" %}
+    </div>
 
 {% endblock content %}
+
+{% block extra_js %}
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script type='text/javascript' src="{% static "js/submit-form.js" %}"></script>
+{% endblock extra_js %}

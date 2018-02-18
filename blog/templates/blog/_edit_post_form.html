@@ -1,11 +1,6 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<form action="" method="post" id="submit-post-form">
+    {% csrf_token %}
 
-<div id="post-editor">
-    <textarea name="post-text" id="post-editor-area" title="Post"></textarea>
-
-</div>
-
-<script>
-    new SimpleMDE({ element: document.getElementById("post-editor-area") })
-</script>
+    {{ form }}
+    <input id="submit" type="submit" value="Submit">
+</form>
