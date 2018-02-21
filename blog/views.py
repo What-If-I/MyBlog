@@ -1,5 +1,3 @@
-import markdown.extensions.extra
-
 from django.urls import reverse
 from django.views.generic import CreateView
 from django.views.generic.detail import DetailView
