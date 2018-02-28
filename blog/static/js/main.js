@@ -63,7 +63,7 @@ jQuery(document).ready(function () {
 });
 
 
-jQuery(window).load(function () {
+jQuery(window).on("load", function () {
 
     jQuery(".blog-item-holder").hover(function () {
             jQuery(".blog-item-holder").not(this).addClass('blur');
