@@ -288,9 +288,7 @@ input, textarea, select
     background: #5B5B5B;
     left: 36px;
     position: absolute;
-    -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-transition: -webkit-transform 0.25s;
     transition: transform 0.3s;
     top: 48px;
 }
@@ -326,10 +324,6 @@ input, textarea, select
     background: #5B5B5B;
     left: 36px;
     position: absolute;
-    -webkit-transition: opacity 0.25s;
-    -moz-transition: opacity 0.25s;
-    -ms-transition: opacity 0.25s;
-    -o-transition: opacity 0.25s;
     transition: opacity 0.25s;
     top: 48px;
 }
@@ -362,10 +356,6 @@ input, textarea, select
 {
     padding-bottom: 100px;
     position: relative;
-    -webkit-transition: margin 0.3s ease;
-    -moz-transition: margin 0.3s ease;
-    -ms-transition: margin 0.3s ease;
-    -o-transition: margin 0.3s ease;
     transition: margin 0.3s ease;
 }
 
@@ -564,13 +554,8 @@ body.page-scroll .site-content
 
 .full-screen-scroll .cbp-bislideshow
 {
-    width: 100%;
     width: calc(100% - 100px);
     left: 100px;    
-    -webkit-transition: left 0.3s ease;
-    -moz-transition: left 0.3s ease;
-    -ms-transition: left 0.3s ease;
-    -o-transition: left 0.3s ease;
     transition: left 0.3s ease;
 }
 
@@ -585,8 +570,6 @@ body.page-scroll .site-content
     opacity: 1 !important;
     width: 45%;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     background-size: cover;
 }
 
@@ -619,10 +602,6 @@ body.page-scroll .site-content
     width: 100%;
     max-width: 100%;
     opacity: 0;  
-    -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -ms-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
 }
 
@@ -750,7 +729,7 @@ body.page-scroll .site-content
     font-family: 'Montserrat', sans-serif, Arial;
     font-size: 20px;
     line-height: 28px;
-    padding: 40px 60px 0px 60px;    
+    padding: 40px 60px 0 60px;
 }
 
 .team-holder .member-position
@@ -758,7 +737,7 @@ body.page-scroll .site-content
     font-family: 'Montserrat', sans-serif, Arial;
     font-size: 14px;
     line-height: 22px;
-    padding: 10px 60px 0px 60px;
+    padding: 10px 60px 0 60px;
 }
 
 .team-holder .member-content
@@ -911,9 +890,6 @@ body.page-scroll .site-content
     color: #d8588c;
     padding-left: 3px;
     padding-right: 2px;   
-    -webkit-animation: pulse 1s linear infinite;
-    -moz-animation: pulse 1s linear infinite;
-    -ms-animation: pulse 1s linear infinite;
     animation: pulse 1s infinite;
 }
 
@@ -1256,7 +1232,7 @@ div.featured-image-holder {
     {
         opacity: 0.9 !important;
         position: relative;
-        padding: 50px 0px;
+        padding: 50px 0;
     }
 
     .full-screen-scroll h2.entry-title 
