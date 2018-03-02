@@ -1,7 +1,9 @@
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import DeletionMixin
 from django.views.generic.list import ListView
+from django.http import HttpResponse
 
 from . import models, forms
 
@@ -17,11 +19,17 @@ class Articles(ListView):
 
 class Article(DetailView):
 
-    http_method_names = ['get']
+    http_method_names = ['get', 'delete']
     template_name = 'blog/single.html'
     model = models.Article
     pk_url_kwarg = 'article_id'
     context_object_name = 'article'
+    success_url = reverse_lazy('index')
+
+    def delete(self, request, *args, **kwargs):
+        article = self.get_object()
+        article.delete()
+        return HttpResponse(status=204)
 
 
 class ArticleCreate(CreateView):

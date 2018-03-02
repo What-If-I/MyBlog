@@ -1,5 +1,23 @@
 <div id="header">
-    <div class="admin-menu">
-        <a href="editor"><button id="create-post"><i class="fa fa-pencil"></i></button></a>
-    </div>
+    {% if request.user.is_staff %}
+        <div class="admin-menu">
+            <a href="{% url "create_article" %}">
+                <button id="create-post">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </a>
+        </div>
+        {% if article %}
+            <div class="admin-menu">
+                    <button id="edit-post" data-token="{{ csrf_token }}" data-article-id="{{ article.id }}">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+            </div>
+            <div class="admin-menu">
+                    <button id="delete-post" data-token="{{ csrf_token }}" data-article-id="{{ article.id }}">
+                        <i class="fa fa-trash"></i>
+                    </button>
+            </div>
+        {% endif %}
+    {% endif %}
 </div>

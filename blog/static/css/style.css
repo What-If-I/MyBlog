@@ -894,17 +894,19 @@ body.page-scroll .site-content
 }
 
 #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     top: 0;
     left: 420px;
 }
 
 #header > div.admin-menu {
-    float: right;
     padding-right: 4rem;
     padding-top: 20px;
 }
 
-button#create-post {
+.admin-menu button {
     font-size: 2em;
     background: Transparent no-repeat;
     border: none;
@@ -914,7 +916,7 @@ button#create-post {
     transition: color 0.5s ease;
 }
 
-button#create-post:hover {
+.admin-menu button:hover {
     color: #0697ae;
 }
 

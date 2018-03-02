@@ -1,9 +1,11 @@
 {% extends "blog/_base.html" %}
+{% load static %}
 {% load templatefilters %}
 
 {% block content %}
 
     <div class="single-post">
+    {% include "blog/_header.html" %}
 
         <!-- Single Content -->
         <div id="content" class="site-content center-relative">
@@ -32,3 +34,6 @@
         </div>
     </div>
 {% endblock content %}
+{% block extra_js %}
+    <script type='text/javascript' src="{% static "js/admin-menu.js" %}"></script>
+{% endblock extra_js %}

@@ -20,6 +20,8 @@ from . import views
 urlpatterns = [
     path('', views.Articles.as_view(), name='index'),
     path('article/<int:article_id>', views.Article.as_view(), name='article'),
-    path('editor/', views.ArticleCreate.as_view(), name='editor'),
+    path('article/create-article', views.ArticleCreate.as_view(), name='create_article'),
+    path('article/edit/<int:article_id>',
+         views.ArticleCreate.as_view(), name='edit_article'),
     path('admin/', admin.site.urls),
 ]
