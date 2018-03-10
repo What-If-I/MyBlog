@@ -1,4 +1,5 @@
 <div id="header">
+
     {% if request.user.is_staff %}
         <div class="admin-menu">
             <a href="{% url "create_article" %}">
@@ -9,9 +10,11 @@
         </div>
         {% if article %}
             <div class="admin-menu">
-                    <button id="edit-post" data-token="{{ csrf_token }}" data-article-id="{{ article.id }}">
+                <a href="{% url "edit_article" article.id %}">
+                    <button id="edit-post">
                         <i class="fa fa-pencil"></i>
                     </button>
+                </a>
             </div>
             <div class="admin-menu">
                     <button id="delete-post" data-token="{{ csrf_token }}" data-article-id="{{ article.id }}">
@@ -20,4 +23,5 @@
             </div>
         {% endif %}
     {% endif %}
+
 </div>

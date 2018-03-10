@@ -1,21 +1,6 @@
 (function () {
 
-    var deleteBtn = jQuery('#delete-post'),
-        editBtn = jQuery('#edit-post');
-
-    editBtn.click(function () {
-        $.ajax({
-            url: '/article/' + editBtn.data('article-id'),
-            type: 'DELETE',
-            headers: {'X-CSRFToken': editBtn.data('token')},
-            success: function (result) {
-                window.location.href = '/'
-            },
-            error: function (result) {
-                alert(result)
-            }
-        });
-    });
+    var deleteBtn = jQuery('#delete-post');
 
 
     deleteBtn.click(function () {
