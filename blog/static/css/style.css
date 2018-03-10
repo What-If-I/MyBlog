@@ -932,7 +932,6 @@ body.page-scroll .site-content
     flex-direction: row;
     background-color: #2D2D2D;
     width: 100px;
-    height: 100vh;
     transition: width .1s ease;
     z-index: 3;
 }
